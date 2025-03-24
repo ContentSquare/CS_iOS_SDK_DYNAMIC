@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "CS_iOS_SDK",
+    name: "CS_iOS_SDK_DYNAMIC",
     platforms: [.iOS(.v12)],
     products: [
         .library(
@@ -38,7 +38,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "ContentsquareModule",
-            url: "https://github.com/ContentSquare/CS_iOS_SDK/releases/download/4.40.0/ContentsquareModulePodDynamic.xcframework.zip",
-            checksum: "a2bf962733f882218743ae3432ff7865bc119e2313c247e4f5967539be846870"),
+            url: "https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.40.101/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
+            checksum: "adfd32c1a5e6bcea95797afebf0ab22b157d728132c4522d7fd138a425704dde"),
     ]
 )
