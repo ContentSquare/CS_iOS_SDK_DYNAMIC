@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "CS_iOS_SDK_DYNAMIC",
+    name: "CS_iOS_SDK",
     platforms: [.iOS(.v12)],
     products: [
         .library(
