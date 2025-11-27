@@ -15,7 +15,7 @@ let package = Package(
         .package(
             name: "CSSwiftProtobuf",
             url: "https://github.com/ContentSquare/CSSwiftProtobuf.git",
-            .exact("1.28.2")),
+            .exact("1.33.3")),
         .package(
             name: "CSCrashReporter",
             url: "https://github.com/ContentSquare/CS_iOS_CrashReporter.git",
@@ -38,7 +38,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "ContentsquareModule",
-            url: "https://github.com/ContentSquare/CS_iOS_SDK/releases/download/4.45.1/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
-            checksum: "1bd9be1986f99e0cbdd573ff02f57496d37ca71211761095c9123509240d0d3b"),
+            url: "https://github.com/ContentSquare/CS_iOS_SDK/releases/download/4.45.2/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
+            checksum: "8d82d36820b979f73010475a4531a11172c4d5424bc866d0d5860bc17e1dafe4"),
     ]
 )
