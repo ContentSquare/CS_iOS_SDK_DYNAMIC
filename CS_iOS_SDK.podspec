@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'CS_iOS_SDK'
-s.version = '4.46.0-alpha.7'
+s.version = '4.46.0-alpha.8'
 s.summary = 'Contentsquare UX SDK for iOS'
 s.homepage = 'https://docs.contentsquare.com/ios'
 s.author = { 'Romain Bouic' => 'romain.bouic@contentsquare.com' }
@@ -26,8 +26,9 @@ LICENSE
 s.platform = :ios
 s.swift_version = '5.1'
 s.ios.deployment_target = '12.0'
-s.ios.vendored_frameworks = 'ContentsquareModule.xcframework'
-s.source = { :http => 'https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.46.0-alpha.7/ContentsquareModulePodDynamic.xcframework.zip' }
+    s.ios.vendored_frameworks = 'ContentsquareModule.xcframework'
+s.source = { :http => 'https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.46.0-alpha.8/ContentsquareModulePodDynamic.xcframework.zip' }
 s.dependency 'CSSwiftProtobuf', '1.33.3'
 s.dependency 'CSCrashReporter', '1.0.1'
+s.dependency 'ContentsquareCore', '0.1.0-alpha.21'
 end
