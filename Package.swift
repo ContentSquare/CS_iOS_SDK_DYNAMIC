@@ -5,31 +5,36 @@ import PackageDescription
 
 let package = Package(
     name: "CS_iOS_SDK",
-    platforms: [.iOS(.v12)],
+    platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "ContentsquareModule",
             targets: ["ContentsquareModuleWrapper"]),
     ],
-    dependencies: [
-        .package(
-            name: "CSSwiftProtobuf",
-            url: "https://github.com/ContentSquare/CSSwiftProtobuf.git",
-            .exact("1.33.3")),
-        .package(
-            name: "CSCrashReporter",
-            url: "https://github.com/ContentSquare/CS_iOS_CrashReporter.git",
-            .exact("1.0.1")),
-    ],
-    targets: [
-        // binaryTarget doesn't support dependency, use a wrapper to fix this.
-        .target(
-            name: "ContentsquareModuleWrapper",
-            dependencies: [
-                .target(name: "ContentsquareModule"),
-                "CSSwiftProtobuf",
-                "CSCrashReporter"
-            ],
+     dependencies: [
+         .package(
+             name: "CSSwiftProtobuf",
+             url: "https://github.com/ContentSquare/CSSwiftProtobuf.git",
+             .exact("1.33.3")),
+         .package(
+             name: "CSCrashReporter",
+             url: "https://github.com/ContentSquare/CS_iOS_CrashReporter.git",
+             .exact("1.0.1")),
+         .package(
+             name: "ContentsquareCore",
+             url: "https://github.com/ContentSquare/apple-core-sdk.git",
+             .exact("0.1.0-alpha.29")),
+     ],
+     targets: [
+         // binaryTarget doesn't support dependency, use a wrapper to fix this.
+         .target(
+             name: "ContentsquareModuleWrapper",
+             dependencies: [
+                 .target(name: "ContentsquareModule"),
+                 "CSSwiftProtobuf",
+                 "CSCrashReporter",
+                 "ContentsquareCore"
+             ],
             path: "ContentsquareModuleWrapper",
             resources: [
                 .process("ContentsquareBundle.bundle"),
@@ -38,7 +43,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "ContentsquareModule",
-            url: "https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.47.0-alpha.7/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
-            checksum: "ea5a9865f9955102d81f4b913f66d3964822f70383d6dc35ef50c2e8d3589184"),
+            url: "https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.47.0-alpha.8/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
+            checksum: "1a509c8847c45b4ab3ce3f703c94aa1025fe4cbae1fb553a7680eef042298b85"),
     ]
 )
