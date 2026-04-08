@@ -23,7 +23,7 @@ let package = Package(
          .package(
              name: "ContentsquareCore",
              url: "https://github.com/ContentSquare/apple-core-sdk.git",
-             .exact("0.1.0-alpha.29")),
+             .exact("0.1.0-alpha.31")),
      ],
      targets: [
          // binaryTarget doesn't support dependency, use a wrapper to fix this.
@@ -43,7 +43,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "ContentsquareModule",
-            url: "https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.47.0-alpha.8/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
-            checksum: "1a509c8847c45b4ab3ce3f703c94aa1025fe4cbae1fb553a7680eef042298b85"),
+            url: "https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.47.0-alpha.9/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
+            checksum: "ef115523b02a5d4d84ed4f5e81eb38431d2bd5c8fe0bc553365b4982d81345cd"),
     ]
 )
