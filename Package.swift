@@ -15,15 +15,19 @@ let package = Package(
          .package(
              name: "CSSwiftProtobuf",
              url: "https://github.com/ContentSquare/CSSwiftProtobuf.git",
-             .exact("1.33.3-rc.1")),
+             .exact("1.33.3")),
          .package(
              name: "CSCrashReporter",
              url: "https://github.com/ContentSquare/CS_iOS_CrashReporter.git",
-             .exact("1.0.2")),
+             .exact("1.0.1")),
          .package(
              name: "ContentsquareCore",
              url: "https://github.com/ContentSquare/apple-core-sdk.git",
-             .exact("0.2.0-alpha.11")),
+             .exact("0.1.4")),
+         .package(
+             name: "ContentsquareUICore",
+             url: "https://github.com/contentsquare/ios-ui-core-sdk.git",
+             .exact("0.1.0")),
      ],
      targets: [
          // binaryTarget doesn't support dependency, use a wrapper to fix this.
@@ -33,7 +37,8 @@ let package = Package(
                  .target(name: "ContentsquareModule"),
                  "CSSwiftProtobuf",
                  "CSCrashReporter",
-                 "ContentsquareCore"
+                 "ContentsquareCore",
+                 "ContentsquareUICore"
              ],
             path: "ContentsquareModuleWrapper",
             resources: [
@@ -43,7 +48,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "ContentsquareModule",
-            url: "https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.52.0-alpha.4/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
-            checksum: "b0a05b4672cfd29d56c47f9547211e285fc13f2919bde6c006eb2650910e6e58"),
+            url: "https://github.com/ContentSquare/CS_iOS_SDK_DYNAMIC/releases/download/4.52.0-alpha.5/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
+            checksum: "e543388b3f8868631617956501e55cc5d8b1b6c74b55434695c530e234f511a6"),
     ]
 )
