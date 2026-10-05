@@ -1,11 +1,18 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "CS_iOS_SDK",
-    platforms: [.iOS(.v13)],
+    platforms: [
+        .iOS(.v13),
+        .macCatalyst(.v13),
+        .macOS(.v11),
+        .tvOS(.v13),
+        .watchOS(.v6),
+        .visionOS(.v1),
+    ],
     products: [
         .library(
             name: "ContentsquareModule",
@@ -42,13 +49,13 @@ let package = Package(
              ],
             path: "ContentsquareModuleWrapper",
             resources: [
-                .process("ContentsquareBundle.bundle"),
+                .copy("ContentsquareBundle.bundle"),
                 .copy("PrivacyInfo.xcprivacy")
             ]
         ),
         .binaryTarget(
             name: "ContentsquareModule",
-            url: "https://github.com/ContentSquare/CS_iOS_SDK_MOCK/releases/download/4.53.0-rc.14/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
-            checksum: "d1a763f9e31712fd4fa07195014f48c21866890ee2d95fbdb7ea397d95ad9d99"),
+            url: "https://github.com/ContentSquare/CS_iOS_SDK_MOCK/releases/download/4.53.0-rc.15/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
+            checksum: "767f88177e011d2c8707b91580d5edd9ce22614f6aeea7448878817640204d61"),
     ]
 )
