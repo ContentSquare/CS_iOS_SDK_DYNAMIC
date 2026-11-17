@@ -1,18 +1,11 @@
-// swift-tools-version:5.9
+// swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "CS_iOS_SDK",
-    platforms: [
-        .iOS(.v13),
-        .macCatalyst(.v13),
-        .macOS(.v11),
-        .tvOS(.v13),
-        .watchOS(.v6),
-        .visionOS(.v1),
-    ],
+    platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "ContentsquareModule",
@@ -30,32 +23,32 @@ let package = Package(
          .package(
              name: "ContentsquareCore",
              url: "https://github.com/ContentSquare/apple-core-sdk.git",
-             .exact("0.2.4")),
+             .exact("0.2.0")),
          .package(
              name: "ContentsquareUICore",
              url: "https://github.com/contentsquare/ios-ui-core-sdk.git",
-             .exact("0.2.1")),
+             .exact("0.1.0")),
      ],
      targets: [
          // binaryTarget doesn't support dependency, use a wrapper to fix this.
          .target(
              name: "ContentsquareModuleWrapper",
              dependencies: [
-                 .target(name: "ContentsquareModule", condition: .when(platforms: [ .iOS ])),
+                 .target(name: "ContentsquareModule"),
                  "CSSwiftProtobuf",
-                 .product(name: "CSCrashReporter", package: "CSCrashReporter", condition: .when(platforms: [ .iOS ])),
+                 "CSCrashReporter",
                  "ContentsquareCore",
-                 .product(name: "ContentsquareUICore", package: "ContentsquareUICore", condition: .when(platforms: [ .iOS, .macCatalyst ]))
+                 "ContentsquareUICore"
              ],
             path: "ContentsquareModuleWrapper",
             resources: [
-                .copy("ContentsquareBundle.bundle"),
+                .process("ContentsquareBundle.bundle"),
                 .copy("PrivacyInfo.xcprivacy")
             ]
         ),
         .binaryTarget(
             name: "ContentsquareModule",
-            url: "https://github.com/ContentSquare/CS_iOS_SDK_MOCK/releases/download/4.53.3-rc.1/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
-            checksum: "14d1973adecb9de959b3be583801f192caa247e3f3d7e45be89739a844fe0931"),
+            url: "https://github.com/ContentSquare/CS_iOS_SDK_MOCK/releases/download/4.52.5-rc.1/ContentsquareModuleSwiftPackageDynamic.xcframework.zip",
+            checksum: "06a40034653860c6968e302e91f247e58a47bb5ac35319ce07f79c84cf2feb5d"),
     ]
 )
